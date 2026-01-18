@@ -43,7 +43,10 @@ jobs:
         # 将Base64编码的密钥库还原为文件
         echo "$KEYSTORE_BASE64" | base64 -d > my-release-key.keystore
         
-        # 执行构建，Gradle会使用环境变量进行签名
+        # 设置KEYSTORE_PATH环境变量为当前工作目录下的绝对路径
+        echo "KEYSTORE_PATH=$(pwd)/my-release-key.keystore" >> $GITHUB_ENV
+        
+        # 执行构建
         ./gradlew assembleRelease
 
     - name: Upload Signed Artifact
