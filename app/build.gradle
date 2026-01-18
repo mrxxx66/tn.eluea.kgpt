@@ -19,10 +19,11 @@ android {
 
     signingConfigs {
         release {
-            storeFile = file("${System.getProperty('user.home')}/.android/debug.keystore")
-            storePassword = "android"
-            keyAlias = "androiddebugkey"
-            keyPassword = "android"
+            // 从环境变量或系统属性中读取签名信息
+            storeFile = file(System.getenv("KEYSTORE_PATH") ?: "my-release-key.keystore")
+            storePassword = System.getenv("KEYSTORE_PASSWORD") ?: "android"
+            keyAlias = System.getenv("KEY_ALIAS") ?: "my-key-alias"
+            keyPassword = System.getenv("KEY_PASSWORD") ?: "android"
         }
     }
 

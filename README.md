@@ -11,11 +11,11 @@
   - LSPosed 框架（v1.8.6+）
   - 现有输入法应用（如 Gboard、AOSP 键盘）
 - ⚠️ **重要提示**：
-  - `KGPT` 是 **Xposed 增强插件**，不是独立输入法
+  - `KGPT` 是 **LSPosed 增强插件**，不是独立输入法
   - 必须保留并启用现有输入法作为基础输入服务
 
 ### 1.2 安装步骤
-1. **安装 Xposed 框架**
+1. **安装 LSPosed 框架**
    - 刷入 Magisk 模块安装 LSPosed
    - 重启进入系统
 
@@ -23,7 +23,7 @@
    - 从 [GitHub Releases](https://github.com/Eluea/KGPT/releases) 获取最新 `KGPT_vX.X.X.apk`
    - 使用 ADB 安装：`adb install KGPT_vX.X.X.apk`
 
-3. **配置 Xposed 模块**
+3. **配置 LSPosed 模块**
    - 打开 LSPosed 应用
    - 在模块列表中找到 `KGPT` 并启用
    - 在作用域中选择您的输入法（如 `com.android.inputmethod.latin`）
@@ -66,7 +66,7 @@
 
 ## 三、高级功能管理
 
-### 3.1 Xposed 模块管理
+### 3.1 LSPosed 模块管理
 - **启用/禁用**：通过 LSPosed 应用控制
 - **作用域配置**：必须包含至少一个输入法包名
 - **冲突处理**：避免与其他输入法增强模块同时启用
@@ -82,4 +82,4 @@
 > **文档更新记录**
 > - 2026-01-18：基于 v1.0 架构创建初始分析文档
 > - 2026-01-18：修正 LSPosed 作用域配置说明
-> - 2026-01-18：彻底修正项目定位，明确为 Xposed 增强插件（非输入法）
+> - 2026-01-18：彻底修正项目定位，明确为 LSPosed 增强插件（非输入法）
